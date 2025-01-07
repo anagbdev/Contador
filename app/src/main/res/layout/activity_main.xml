@@ -10,7 +10,7 @@
 
     <!-- Texto en la parte superior -->
     <TextView
-        android:id="@+id/contadorPulsaciones"
+        android:id="@+id/counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contador: "
@@ -18,40 +18,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="64dp" />
 
-    <!-- Botón de incrementar -->
+    <!-- Increase Button -->
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/increase"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Incrementa"
-        app:layout_constraintBottom_toTopOf="@id/resetea"
+        android:text="Increase"
+        app:layout_constraintBottom_toTopOf="@id/reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp" />
 
-    <!-- Botón de resetear -->
+    <!-- Reset Button -->
     <Button
-        android:id="@+id/resetea"
+        android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Resetear"
-        app:layout_constraintBottom_toTopOf="@id/button3"
+        android:text="Reset"
+        app:layout_constraintBottom_toTopOf="@id/decrease"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="16dp" />
 
-    <!-- Botón de decrementar -->
+    <!-- Decrease Button -->
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/decrease"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Decrementa"
+        android:text="Decrease"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="64dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
