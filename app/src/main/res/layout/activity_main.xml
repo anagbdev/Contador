@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Texto en la parte superior -->
+    <!-- Upperside text -->
     <TextView
         android:id="@+id/counter"
         android:layout_width="wrap_content"
@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toTopOf="@id/reset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:onClick="increaseCounter" />
 
     <!-- Reset Button -->
     <Button
@@ -40,7 +41,8 @@
         app:layout_constraintBottom_toTopOf="@id/decrease"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:onClick="resetCounter"/>
 
     <!-- Decrease Button -->
     <Button
@@ -51,6 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="64dp" />
+        android:layout_marginBottom="64dp"
+        android:onClick="decreaseCounter"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
