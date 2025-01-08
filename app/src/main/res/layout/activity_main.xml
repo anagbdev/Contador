@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- First Linear Layout -->
+
     <LinearLayout
         android:id="@+id/topLayout"
         android:orientation="vertical"
@@ -25,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contador: "
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     <!-- Text that shows the counter -->
         <TextView
@@ -33,10 +35,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            android:textSize="45sp"
+            android:textSize="50dp"
             android:layout_marginTop="16dp" />
 
     </LinearLayout>
+
+    <!-- Second Linear Layout -->
 
     <LinearLayout
         android:orientation="horizontal"
@@ -48,28 +52,38 @@
         android:layout_marginTop="100dp"
         android:gravity="center">
 
-    <!-- Increase Button -->
+        <!-- Increase Button -->
         <Button
             android:id="@+id/increase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Increase"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="+"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="increaseCounter" />
+            android:onClick="increaseCounter"
+            android:textSize="40dp"/>
 
-    <!-- Decrease Button -->
+        <!-- Space between buttons-->
+
+        <android.widget.Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+        <!-- Decrease Button -->
         <Button
             android:id="@+id/decrease"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Decrease"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="-"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:onClick="decreaseCounter"/>
+            android:onClick="decreaseCounter"
+            android:textSize="40dp"/>
 
     </LinearLayout>
+
+    <!-- Third Linear Layout -->
 
     <LinearLayout
         android:orientation="horizontal"
@@ -78,10 +92,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center">
 
-    <!-- Reset Button -->
+        <!-- Reset Button -->
         <Button
             android:id="@+id/reset"
             android:layout_width="wrap_content"
