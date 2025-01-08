@@ -1,5 +1,6 @@
 package com.example.contador;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import 	android.view.View;
 import android.widget.TextView;
@@ -18,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    //Method used to manage the orientation change
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
+
 
     //Method used to increase the counter
 
