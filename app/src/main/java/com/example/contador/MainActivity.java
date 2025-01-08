@@ -51,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
         showCount();
     }
 
+    // Method used to show the count
+
     public void showCount(){
 
         TextView countText =(TextView)findViewById(R.id.counter);
 
-        countText.setText("Contador: "+ Integer.toString(counter));
+        countText.setText(Integer.toString(counter));
     }
 }
