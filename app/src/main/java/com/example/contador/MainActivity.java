@@ -6,17 +6,20 @@ import 	android.view.View;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
 
     public int counter =0;
+
+    TextView countText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
+        TextView countText =(TextView)findViewById(R.id.counter);
     }
 
     //Method used to manage the orientation change
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
-
 
     //Method used to increase the counter
 
@@ -39,7 +41,17 @@ public class MainActivity extends AppCompatActivity {
     public void decreaseCounter(View View){
 
         counter--;
-        showCount();
+
+        Switch switchControl = (Switch)findViewById(R.id.allowNeg);
+
+        boolean allowNegative = switchControl.isChecked();
+
+        if(allowNegative || counter >0){
+
+            counter--;
+            showCount();
+
+        }
     }
 
     //Method used to restart the counter
@@ -48,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         counter=0;
         showCount();
+
     }
 
     // Method used to show the count
