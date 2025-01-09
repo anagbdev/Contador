@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Contador: "
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
     <!-- Text that shows the counter -->
         <TextView
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"
-            android:textSize="50dp"
+            android:textSize="50sp"
             android:layout_marginTop="16dp" />
 
     </LinearLayout>
@@ -43,25 +43,26 @@
     <!-- Second Linear Layout -->
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/topLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="100dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout">
 
         <!-- Increase Button -->
         <Button
             android:id="@+id/increase"
-            android:layout_width="70dp"
+            android:layout_width="71dp"
             android:layout_height="70dp"
-            android:text="+"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:onClick="increaseCounter"
-            android:textSize="40dp"/>
+            android:text="+"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <!-- Space between buttons-->
 
@@ -74,35 +75,69 @@
             android:id="@+id/decrease"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:text="-"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:onClick="decreaseCounter"
-            android:textSize="40dp"/>
+            android:text="-"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 
     <!-- Third Linear Layout -->
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="50dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Reset Button -->
-        <Button
-            android:id="@+id/reset"
+        <!-- Nested Linear Layout -->
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- Reset Button -->
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="resetCounter"
+                android:text="Reset" />
+
+            <!-- EditText for reset value -->
+            <EditText
+                android:id="@+id/resetNumberInput"
+                android:layout_width="66dp"
+                android:layout_height="53dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number|numberSigned"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+        <!-- Switch to allow/disallow custom reset -->
+        <Switch
+            android:id="@+id/switch1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            android:onClick="resetCounter"/>
-    </LinearLayout>
+            android:layout_height="48dp"
+            android:text="Allow custom reset value"
+            android:layout_marginTop="16dp"
+           />
 
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
